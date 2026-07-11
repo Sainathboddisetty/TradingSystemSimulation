@@ -1,18 +1,18 @@
-#include "../include/instrument.hpp"
+#include "../include/order.hpp"
 #include <iostream>
 
 
 int main(){
     
-     ts::Instrument inst;
-    inst.symbol = ts::Symbol("AAPL");
-    inst.exchange = ts::Symbol("NASDAQ");
-    inst.currency = ts::Symbol("USD");
-    inst.tick_size = 0.01;
-    inst.lot_size = 1;
-    inst.base_price = 150.00;
-    inst.asset_class = ts::AssetClass::Equity;
-    inst.print();
-    std::cout << "Rounded price for 150.023: " << inst.round_to_tick(150.023) << std::endl;
+    ts::Order order;
+    order.id = 123456789;
+    order.symbol = ts::Symbol("AAPL");
+    order.limit_price = 150.25;
+    order.qty = 100;
+    std::cout << "Order created: " << order.id<< std::endl;
+    // Print order details
+    std::cout << "Symbol: " << order.symbol.c_str() << std::endl;
+    std::cout << "Limit Price: " << order.limit_price << std::endl;
+    std::cout << "Quantity: " << order.qty << std::endl;    
     return 0;
 }

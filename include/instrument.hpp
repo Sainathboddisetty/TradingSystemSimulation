@@ -4,13 +4,13 @@
 
 namespace ts {
 struct alignas(64) Instrument{
-    Symbol symbol;          // 16 bytes
-    Symbol exchange;        // 16 bytes  (NASDAQ, NYSE, CME)
-    Symbol currency;        // 16 bytes  (USD, EUR)
-    Price tick_size;        // 8  bytes
-    Quantity lot_size;      // 4  bytes
-    Price base_price;       // 8  bytes
-    AssetClass asset_class; // 1  byte 
+    Symbol    symbol;           // 16 bytes
+    Symbol    exchange;         // 16 bytes  (NASDAQ, NYSE, CME)
+    Symbol    currency;         // 16 bytes  (USD, EUR)
+    Price     tick_size;        // 8  bytes
+    Price     base_price;       // 8  bytes — 80 bytes so far
+    Quantity  lot_size;         // 4  bytes
+    AssetClass asset_class;     // 1  byte
     uint8_t _pad[59]{}; // total 69 + 59 = 128 bytes (2 cache line size)
 
     Price round_to_tick(Price p){
@@ -22,7 +22,6 @@ struct alignas(64) Instrument{
             symbol.c_str(), exchange.c_str(), to_str(asset_class),
             tick_size, lot_size, base_price);
     }
-
 
 };
 }

@@ -22,7 +22,7 @@ struct Symbol {
 
     explicit Symbol(const char* str) {
         std::strncpy(data.data(), str, data.size() - 1);
-        data.back() = 'A'; // Ensure null-termination
+        data.back() = '\0'; // Ensure null-termination
     }
 
     const char* c_str() const { return data.data(); }
