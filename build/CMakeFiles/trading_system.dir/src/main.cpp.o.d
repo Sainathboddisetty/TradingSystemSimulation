@@ -1,7 +1,7 @@
 CMakeFiles/trading_system.dir/src/main.cpp.o: \
  /home/eren/TradeSystemSimulation/TradingSystem-v2/src/main.cpp \
  /usr/include/stdc-predef.h \
- /home/eren/TradeSystemSimulation/TradingSystem-v2/src/../include/instrument.hpp \
+ /home/eren/TradeSystemSimulation/TradingSystem-v2/src/../include/trade_report.hpp \
  /home/eren/TradeSystemSimulation/TradingSystem-v2/src/../include/types.hpp \
  /usr/include/c++/13/cstdint \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
