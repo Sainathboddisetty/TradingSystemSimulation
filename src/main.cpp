@@ -1,31 +1,15 @@
-#include "../include/memory_pool.hpp"
+#include "../include/latency_timer.hpp"
 #include <iostream>
-
+#include <thread>
+#include <chrono>
 
 int main(){
 
-    //**Test:**
-// - [ ] Allocate 10 objects, verify they're different
-// - [ ] Deallocate them all
-// - [ ] Allocate again, verify you get the same pointers (stack behavior)
-
-    ts::MemoryPool<int, 10> pool;
-    int* ptrs[10];
-    for (int i = 0; i < 10; ++i) {
-        ptrs[i] = pool.allocate();
-        *ptrs[i] = i;
-    }
-    for (int i = 0; i < 10; ++i) {
-        std::cout << "Allocated: " << *ptrs[i] << " at " << ptrs[i] << std::endl;
-    }
-    for (int i = 0; i < 10; ++i) {
-        pool.deallocate(ptrs[i]);
-    }
-    for (int i = 0; i < 10; ++i) {
-        ptrs[i] = pool.allocate();
-        *ptrs[i] = i+1;
-        std::cout << "Re-allocated: " << *ptrs[i] << " at " << ptrs[i] << std::endl;
-    }
-
+    double ghz = ts::cpu_ghz();
+    uint64_t t0 = ts::rdtscp();
+    std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    uint64_t t1 = ts::rdtscp();
+    double ns = ts::ticks_to_ns(t1 - t0, ghz);
+    std::cout << "Latency: " << ns << " ns" << std::endl;
     return 0;
 }
