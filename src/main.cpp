@@ -1,15 +1,39 @@
-#include "../include/latency_timer.hpp"
+#include "../src/reference_data_loader.hpp"
 #include <iostream>
-#include <thread>
-#include <chrono>
 
-int main(){
+int main() {
 
-    double ghz = ts::cpu_ghz();
-    uint64_t t0 = ts::rdtscp();
-    std::this_thread::sleep_for(std::chrono::milliseconds(10));
-    uint64_t t1 = ts::rdtscp();
-    double ns = ts::ticks_to_ns(t1 - t0, ghz);
-    std::cout << "Latency: " << ns << " ns" << std::endl;
+    auto instruments = ts::ReferenceDataLoader::load("../data/instruments.csv");
+
+    std::cout << "\nLoaded Instruments:\n\n";
+
+    for (const auto& inst : instruments) {
+        std::cout
+            << "Symbol      : " << inst.symbol.c_str() << '\n'
+            << "Exchange    : " << inst.exchange.c_str() << '\n'
+            << "Currency    : " << inst.currency.c_str() << '\n'
+            << "Tick Size   : " << inst.tick_size << '\n'
+            << "Lot Size    : " << inst.lot_size << '\n'
+            << "Base Price  : " << inst.base_price << '\n'
+            << "Asset Class : ";
+
+        switch (inst.asset_class) {
+            case ts::AssetClass::Equity:
+                std::cout << "Equity";
+                break;
+            case ts::AssetClass::ETF:
+                std::cout << "ETF";
+                break;
+            case ts::AssetClass::Futures:
+                std::cout << "Futures";
+                break;
+            case ts::AssetClass::FX:
+                std::cout << "FX";
+                break;
+        }
+
+        std::cout << "\n--------------------------\n";
+    }
+
     return 0;
 }
