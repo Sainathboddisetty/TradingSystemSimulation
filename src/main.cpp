@@ -1,39 +1,32 @@
+#include "../src/mock_exchange.hpp"
 #include "../src/reference_data_loader.hpp"
 #include <iostream>
 
 int main() {
+    auto instruments =
+        ts::ReferenceDataLoader::load("../data/instruments.csv");
 
-    auto instruments = ts::ReferenceDataLoader::load("../data/instruments.csv");
+    ts::MockExchange exchange(instruments);
 
-    std::cout << "\nLoaded Instruments:\n\n";
+    exchange.start();
 
-    for (const auto& inst : instruments) {
-        std::cout
-            << "Symbol      : " << inst.symbol.c_str() << '\n'
-            << "Exchange    : " << inst.exchange.c_str() << '\n'
-            << "Currency    : " << inst.currency.c_str() << '\n'
-            << "Tick Size   : " << inst.tick_size << '\n'
-            << "Lot Size    : " << inst.lot_size << '\n'
-            << "Base Price  : " << inst.base_price << '\n'
-            << "Asset Class : ";
+    ts::Quote q{};
 
-        switch (inst.asset_class) {
-            case ts::AssetClass::Equity:
-                std::cout << "Equity";
-                break;
-            case ts::AssetClass::ETF:
-                std::cout << "ETF";
-                break;
-            case ts::AssetClass::Futures:
-                std::cout << "Futures";
-                break;
-            case ts::AssetClass::FX:
-                std::cout << "FX";
-                break;
+    int received = 0;
+    while (received < 10) {
+        if (exchange.quote_queue().pop(q)) {
+            std::cout
+                << q.symbol.c_str()
+                << " Bid=" << q.bid
+                << " Ask=" << q.ask
+                << " BidQty=" << q.bid_size
+                << " AskQty=" << q.ask_size
+                << '\n';
+
+            ++received;
         }
-
-        std::cout << "\n--------------------------\n";
     }
 
+    exchange.stop();
     return 0;
 }
