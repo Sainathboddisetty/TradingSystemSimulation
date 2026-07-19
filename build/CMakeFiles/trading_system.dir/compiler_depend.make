@@ -5,15 +5,18 @@ CMakeFiles/trading_system.dir/src/main.cpp.o: /home/eren/TradeSystemSimulation/T
   /home/eren/TradeSystemSimulation/TradingSystem-v2/include/fill.hpp \
   /home/eren/TradeSystemSimulation/TradingSystem-v2/include/instrument.hpp \
   /home/eren/TradeSystemSimulation/TradingSystem-v2/include/latency_timer.hpp \
+  /home/eren/TradeSystemSimulation/TradingSystem-v2/include/memory_pool.hpp \
   /home/eren/TradeSystemSimulation/TradingSystem-v2/include/order.hpp \
   /home/eren/TradeSystemSimulation/TradingSystem-v2/include/quote.hpp \
   /home/eren/TradeSystemSimulation/TradingSystem-v2/include/spsc_queue.hpp \
   /home/eren/TradeSystemSimulation/TradingSystem-v2/include/types.hpp \
   /home/eren/TradeSystemSimulation/TradingSystem-v2/src/mock_exchange.hpp \
+  /home/eren/TradeSystemSimulation/TradingSystem-v2/src/order_manager.hpp \
   /home/eren/TradeSystemSimulation/TradingSystem-v2/src/reference_data_loader.hpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
+  /usr/include/assert.h \
   /usr/include/c++/13/algorithm \
   /usr/include/c++/13/array \
   /usr/include/c++/13/atomic \
@@ -99,6 +102,7 @@ CMakeFiles/trading_system.dir/src/main.cpp.o: /home/eren/TradeSystemSimulation/T
   /usr/include/c++/13/bits/uses_allocator_args.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/bits/vector.tcc \
+  /usr/include/c++/13/cassert \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
   /usr/include/c++/13/chrono \
@@ -333,9 +337,11 @@ CMakeFiles/trading_system.dir/src/main.cpp.o: /home/eren/TradeSystemSimulation/T
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
-/usr/include/c++/13/istream:
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
 
-/usr/include/c++/13/iostream:
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/c++/13/ext/type_traits.h:
 
@@ -357,21 +363,17 @@ CMakeFiles/trading_system.dir/src/main.cpp.o: /home/eren/TradeSystemSimulation/T
 
 /usr/include/c++/13/ctime:
 
-/usr/include/c++/13/cstdlib:
-
 /usr/include/c++/13/cstdint:
 
 /usr/include/c++/13/cstdio:
-
-/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
 /usr/include/c++/13/cerrno:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-least.h:
 
 /usr/include/x86_64-linux-gnu/bits/strings_fortified.h:
+
+/usr/include/c++/13/tr1/poly_hermite.tcc:
 
 /usr/include/c++/13/bits/vector.tcc:
 
@@ -404,8 +406,6 @@ CMakeFiles/trading_system.dir/src/main.cpp.o: /home/eren/TradeSystemSimulation/T
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
 /usr/include/c++/13/bits/unique_ptr.h:
-
-/usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
 /usr/include/c++/13/bits/stringfwd.h:
 
@@ -479,11 +479,11 @@ CMakeFiles/trading_system.dir/src/main.cpp.o: /home/eren/TradeSystemSimulation/T
 
 /usr/include/c++/13/bits/ostream_insert.h:
 
-/usr/include/c++/13/clocale:
-
-/home/eren/TradeSystemSimulation/TradingSystem-v2/include/quote.hpp:
+/usr/include/c++/13/bits/ostream.tcc:
 
 /usr/include/c++/13/cwctype:
+
+/home/eren/TradeSystemSimulation/TradingSystem-v2/include/quote.hpp:
 
 /usr/include/c++/13/ratio:
 
@@ -527,15 +527,25 @@ CMakeFiles/trading_system.dir/src/main.cpp.o: /home/eren/TradeSystemSimulation/T
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
+/usr/include/c++/13/ios:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/c++/13/bits/node_handle.h:
+
 /usr/include/c++/13/bits/basic_ios.h:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
-/usr/include/c++/13/bit:
-
-/usr/include/c++/13/bits/basic_string.tcc:
-
 /usr/include/c++/13/bits/enable_special_members.h:
+
+/usr/include/assert.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/c++/13/cwchar:
+
+/usr/include/c++/13/bits/stl_construct.h:
 
 /home/eren/TradeSystemSimulation/TradingSystem-v2/src/reference_data_loader.hpp:
 
@@ -543,11 +553,27 @@ CMakeFiles/trading_system.dir/src/main.cpp.o: /home/eren/TradeSystemSimulation/T
 
 /usr/include/c++/13/algorithm:
 
+/usr/include/c++/13/array:
+
+/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/c++/13/bits/hash_bytes.h:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
 /home/eren/TradeSystemSimulation/TradingSystem-v2/include/order.hpp:
 
 /usr/include/features.h:
 
-/usr/include/alloca.h:
+/usr/include/c++/13/cstdlib:
+
+/home/eren/TradeSystemSimulation/TradingSystem-v2/include/memory_pool.hpp:
+
+/usr/include/c++/13/bits/uniform_int_dist.h:
+
+/usr/include/c++/13/bits/locale_classes.tcc:
 
 /usr/include/c++/13/new:
 
@@ -555,37 +581,29 @@ CMakeFiles/trading_system.dir/src/main.cpp.o: /home/eren/TradeSystemSimulation/T
 
 /usr/include/c++/13/vector:
 
+/usr/include/c++/13/clocale:
+
 /home/eren/TradeSystemSimulation/TradingSystem-v2/src/main.cpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
 /usr/include/c++/13/bits/localefwd.h:
 
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/c++/13/bits/exception_defines.h:
+
+/usr/include/c++/13/bit:
+
+/usr/include/c++/13/bits/basic_string.tcc:
+
+/home/eren/TradeSystemSimulation/TradingSystem-v2/src/order_manager.hpp:
+
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
 
 /home/eren/TradeSystemSimulation/TradingSystem-v2/include/spsc_queue.hpp:
 
-/usr/include/c++/13/ios:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/usr/include/c++/13/bits/node_handle.h:
-
-/usr/include/c++/13/bits/stl_construct.h:
-
-/usr/include/c++/13/array:
-
-/usr/include/c++/13/bits/hash_bytes.h:
-
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
-
-/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
-/usr/include/c++/13/cwchar:
+/usr/include/alloca.h:
 
 /home/eren/TradeSystemSimulation/TradingSystem-v2/include/instrument.hpp:
 
@@ -615,6 +633,8 @@ CMakeFiles/trading_system.dir/src/main.cpp.o: /home/eren/TradeSystemSimulation/T
 
 /usr/include/c++/13/tr1/riemann_zeta.tcc:
 
+/usr/include/c++/13/cassert:
+
 /usr/include/c++/13/bits/cpp_type_traits.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
@@ -639,8 +659,6 @@ CMakeFiles/trading_system.dir/src/main.cpp.o: /home/eren/TradeSystemSimulation/T
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
-
 /usr/include/c++/13/bits/basic_ios.tcc:
 
 /usr/include/c++/13/pstl/execution_defs.h:
@@ -655,19 +673,21 @@ CMakeFiles/trading_system.dir/src/main.cpp.o: /home/eren/TradeSystemSimulation/T
 
 /usr/include/c++/13/bits/ios_base.h:
 
-/usr/include/c++/13/bits/ostream.tcc:
-
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
-
-/usr/include/c++/13/bits/uniform_int_dist.h:
-
-/usr/include/c++/13/bits/locale_classes.tcc:
 
 /usr/include/c++/13/bits/invoke.h:
 
 /home/eren/TradeSystemSimulation/TradingSystem-v2/include/latency_timer.hpp:
 
 /usr/include/c++/13/bits/memoryfwd.h:
+
+/usr/include/c++/13/iostream:
+
+/usr/include/c++/13/istream:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
+/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
 
@@ -716,12 +736,6 @@ CMakeFiles/trading_system.dir/src/main.cpp.o: /home/eren/TradeSystemSimulation/T
 /usr/include/c++/13/tr1/legendre_function.tcc:
 
 /usr/include/c++/13/tr1/modified_bessel_func.tcc:
-
-/usr/include/c++/13/bits/exception_defines.h:
-
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-
-/usr/include/c++/13/tr1/poly_hermite.tcc:
 
 /usr/include/c++/13/tr1/special_function_util.h:
 
@@ -856,8 +870,6 @@ CMakeFiles/trading_system.dir/src/main.cpp.o: /home/eren/TradeSystemSimulation/T
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 

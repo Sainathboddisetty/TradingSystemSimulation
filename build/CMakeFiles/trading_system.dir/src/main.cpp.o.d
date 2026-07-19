@@ -216,6 +216,7 @@ CMakeFiles/trading_system.dir/src/main.cpp.o: \
  /home/eren/TradeSystemSimulation/TradingSystem-v2/src/../src/../include/memory_pool.hpp \
  /usr/include/c++/13/cassert /usr/include/assert.h \
  /home/eren/TradeSystemSimulation/TradingSystem-v2/src/../src/reference_data_loader.hpp \
+ /home/eren/TradeSystemSimulation/TradingSystem-v2/src/../src/strategy.hpp \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/exception \
  /usr/include/c++/13/bits/exception_ptr.h \
